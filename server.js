@@ -1,6 +1,7 @@
 const express = require('express')
 const next = require('next')
 const bodyParser = require('body-parser')
+const request = require('request');
 const axios = require('axios')
 
 const port = parseInt(process.env.PORT, 10) || 3000
@@ -24,6 +25,7 @@ app.prepare().then(() => {
       'Authorization': 'auth 135285658df618353e68137e3e032865-us18',
     };
 
+// Construct req data
     const data = {
       members: [
         {
@@ -32,18 +34,27 @@ app.prepare().then(() => {
         }
       ]
     };
-    const postData = JSON.stringify(data)
-    axios.post('https://us18.api.mailchimp.com/3.0/lists/54c08eb83e/members',
-        postData
-        , {headers: headers}
-    )
-    .then(function (response) {
-      console.log(response);
-      res.send('complete')
-    })
-    .catch(function (error) {
-      console.error(error);
-      res.status(400).send(error)
+
+    const postData = JSON.stringify(data);
+
+    const options = {
+      url: 'https://us18.api.mailchimp.com/3.0/lists/54c08eb83e',
+      method: 'POST',
+      headers: headers,
+      body: postData
+    };
+
+    request(options, (err, response, body) => {
+      if (err) {
+        res.send({data: null, err: 'Something wrong in request'})
+      } else {
+        if (response.statusCode === 200) {
+          console.log(response)
+          res.send({data: 'success', err: null})
+        } else {
+          res.send({data: null, err: 'Something wrong in request'})
+        }
+      }
     });
   })
 

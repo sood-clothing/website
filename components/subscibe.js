@@ -5,38 +5,36 @@ import axios from 'axios'
 
 const EmailSubmit = Input.Search;
 
-function subscribe(email, onSuccess) {
-  onSuccess(true)
+function subscribe(email, onSubscribeResponse) {
   axios.post('/signup', {
     email
   },)
   .then(function (response) {
-    console.log(response);
-    onSuccess(true)
+    onSubscribeResponse('Successful')
   })
   .catch(function (error) {
-    console.log(error);
+    onSubscribeResponse('Please try again!')
   });
 }
 
 export default ({}) => {
   const [canEnterEmail, showEmailInput] = useState(false)
-  const [subscribeSuccessful, onSubscribeSuccesfull] = useState(false)
+  const [subscribeResponse, onSubscribeResponse] = useState('')
   return (
       <div className="root">
         {
           canEnterEmail ?
               <Fragment>
                 {
-                  subscribeSuccessful ?
-                      <Text>SUCCESSFUL!</Text>
+                  subscribeResponse ?
+                      <Text>{subscribeResponse}</Text>
                       :
                       <EmailSubmit
                           placeholder="Email goes here"
                           enterButton="Submit"
                           size="large"
                           onSearch={email => subscribe(email,
-                              onSubscribeSuccesfull)}
+                              onSubscribeResponse)}
                       />
                 }
               </Fragment>
