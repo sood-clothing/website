@@ -1,8 +1,21 @@
 import {useState, Fragment} from 'react'
 import Text from './text'
 import {Button, Input, Icon} from 'antd'
+import axios from 'axios'
 
 const EmailSubmit = Input.Search;
+
+function subscribe(email) {
+  axios.post('/signup', {
+    email
+  },)
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
 
 export default ({}) => {
   const [canEnterEmail, showEmailInput] = useState(false)
@@ -14,7 +27,7 @@ export default ({}) => {
                   placeholder="Email goes here"
                   enterButton="Submit"
                   size="large"
-                  onSearch={value => console.log(value)}
+                  onSearch={email => subscribe(email)}
               />
               :
               <Fragment>
@@ -24,7 +37,6 @@ export default ({}) => {
                         onClick={() => showEmailInput(true)}>SUBSCRIBE FOR
                   UPDATES</Button>
               </Fragment>
-hh
         }
         <style jsx>{`
       .root {
