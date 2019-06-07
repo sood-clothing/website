@@ -6,6 +6,11 @@ import axios from 'axios'
 const EmailSubmit = Input.Search;
 
 function subscribe(email, onSubscribeResponse) {
+  const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  if(!reg.test(email)) {
+    onSubscribeResponse('We accept email Ids only')
+  }
+
   axios.post('/api/signup', {
     email
   },)
