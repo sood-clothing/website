@@ -13,8 +13,12 @@ server.post("*", (req, res) => {
   const email = req.body.email;
   console.log('working sever : ' + email)
 
+  if(!process.env.MAILCHIMP_APIKEY || !email) {
+    res.status(400).end("invalid request")
+  }
+
   const headers = {
-    'Authorization': 'auth 135285658df618353e68137e3e032865-us18',
+    'Authorization': `auth ${process.env.MAILCHIMP_APIKEY}`,
   };
 
 // Construct req data

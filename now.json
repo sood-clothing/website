@@ -22,5 +22,8 @@
         "x-request-path": "$1"
       }
     }
-  ]
+  ],
+  "env": {
+    "MAILCHIMP_APIKEY": "@mailchimp-api-key"
+  }
 }
