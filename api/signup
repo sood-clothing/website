@@ -1,0 +1,55 @@
+const express = require('express')
+const bodyParser = require('body-parser')
+const request = require('request');
+
+const server = express()
+
+server.use(bodyParser.json());       // to support JSON-encoded bodies
+server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+
+server.post("*", (req, res) => {
+  const email = req.body.email;
+  console.log('working sever : ' + email)
+
+  const headers = {
+    'Authorization': 'auth 135285658df618353e68137e3e032865-us18',
+  };
+
+// Construct req data
+  const data = {
+    members: [
+      {
+        email_address: email,
+        status: 'subscribed',
+      }
+    ]
+  };
+
+  const postData = JSON.stringify(data);
+
+  const options = {
+    url: 'https://us18.api.mailchimp.com/3.0/lists/54c08eb83e',
+    method: 'POST',
+    headers: headers,
+    body: postData
+  };
+
+  request(options, (err, response, body) => {
+    if (err) {
+      console.log(err)
+      res.status(400).send({data: null, err: 'Something wrong in request'})
+    } else {
+      if (response.statusCode === 200) {
+        console.log(response)
+        res.send({data: 'success', err: null})
+      } else {
+        console.log('error', response)
+        res.status(400).send({data: null, err: 'Something wrong in request'})
+      }
+    }
+  });
+})
+
+module.exports = server

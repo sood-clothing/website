@@ -6,7 +6,7 @@ import axios from 'axios'
 const EmailSubmit = Input.Search;
 
 function subscribe(email, onSubscribeResponse) {
-  axios.post('/signup', {
+  axios.post('/api/signup', {
     email
   },)
   .then(function (response) {
