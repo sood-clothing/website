@@ -22,7 +22,7 @@ export default ({children, title = 'SOOD'}) => (
         padding: 0;
         margin: 0;
         font-family: 'adam', sans-serif;
-        background-color: gray
+        background-color: gray;
       }
     `}</style>
     </div>
