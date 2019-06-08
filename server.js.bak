@@ -22,7 +22,7 @@ app.prepare().then(() => {
     console.log('working sever : ' + email)
 
     const headers = {
-      'Authorization': 'auth 135285658df618353e68137e3e032865-us18',
+      'Authorization': 'auth ',
     };
 
 // Construct req data
