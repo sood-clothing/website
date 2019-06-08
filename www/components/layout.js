@@ -14,10 +14,14 @@ export default ({children, title = 'SOOD'}) => (
       {children}
 
       <style jsx global>{`
+      @font-face {
+        src: url('/static/fonts/adam-pro.otf');
+        font-family: adam
+      }
       body, html { 
         padding: 0;
         margin: 0;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'adam', sans-serif;
         background-color: gray
       }
     `}</style>

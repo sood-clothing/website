@@ -34,7 +34,7 @@ server.post("*", (req, res) => {
   const postData = JSON.stringify(data);
 
   const options = {
-    url: 'https://us18.api.mailchimp.com/3.0/lists/54c08eb83e',
+    url: `https://${process.env.MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_LISTID}`,
     method: 'POST',
     headers: headers,
     body: postData

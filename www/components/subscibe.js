@@ -36,8 +36,8 @@ export default ({}) => {
                       <Text>{subscribeResponse}</Text>
                       :
                       <EmailSubmit
-                          placeholder="Email goes here"
-                          enterButton="Submit"
+                          placeholder="Email"
+                          enterButton="SUBMIT"
                           size="large"
                           onSearch={email => subscribe(email,
                               onSubscribeResponse)}

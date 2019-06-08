@@ -24,6 +24,8 @@
     }
   ],
   "env": {
-    "MAILCHIMP_APIKEY": "@mailchimp-api-key"
+    "MAILCHIMP_APIKEY": "@mailchimp-api-key",
+    "MAILCHIMP_DC": "us18",
+    "MAILCHIMP_LISTID": "54c08eb83e"
   }
 }
