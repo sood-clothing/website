@@ -46,7 +46,7 @@ export default ({}) => {
               </Fragment>
               :
               <Fragment>
-                <div style={{marginBottom: '15px'}}><Text>COMING SOON</Text>
+                <div style={{marginBottom: '15px'}}><Text>COMING SOON!</Text>
                 </div>
                 <Button type="default" ghost size={'large'}
                         onClick={() => showEmailInput(true)}>SUBSCRIBE FOR

@@ -3,11 +3,11 @@ import SubscribeAction from '../components/subscibe'
 import dynamic from 'next/dynamic'
 
 const Background = dynamic(() => import('../components/background'), {
-  ssr: false
+  ssr: true
 });
 
 export default () => {
-  const adjustHeightClassName = 'adjust-laptop'
+  const adjustHeightClassName = 'adjust-laptop';
   return (
       <Layout>
         <div className={`main ${adjustHeightClassName}`}>
@@ -21,28 +21,28 @@ export default () => {
           </div>
         </div>
         <style jsx>{`
-      .adjust-laptop {
-        font-size: 16px;
-      }
-    
-      .main {
-        height: 100vh;
-      }
+          .adjust-laptop {
+            font-size: 16px;
+          }
+        
+          .main {
+            height: 100vh;
+          }
 
-      .root {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-      }
+          .root {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+          }
 
-      .logo {
-        position: absolute;
-        top: 4em;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
+          .logo {
+            position: absolute;
+            top: 4em;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
       }
    `}</style>
       </Layout>
