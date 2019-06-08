@@ -1,16 +1,18 @@
+import dynamic from 'next/dynamic';
+
 function detectmob() {
   return window.innerWidth <= 800 && window.innerHeight <= 600;
 }
 
 export default ({}) => {
   const base = "/static";
-  const imageSrcsNormal = ['IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_4.jpg',
+  const imageSrcsNormal = ['IMG_4.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_1.jpg',
     'IMG_5.jpg', 'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_4.jpg',
     'IMG_5.jpg', 'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_4.jpg',
     'IMG_5.jpg', 'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg'];
 
-  const imageSrcsMobile = ['IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_4.jpg',
-    'IMG_5.jpg', 'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_4.jpg'];
+  const imageSrcsMobile = ['IMG_4.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_1.jpg',
+    'IMG_5.jpg', 'IMG_2.jpg', 'IMG_2.jpg', 'IMG_2.jpg', 'IMG_1.jpg'];
 
   const imageSrcs = detectmob() ? imageSrcsMobile : imageSrcsNormal;
 

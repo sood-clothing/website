@@ -1,6 +1,10 @@
 import Layout from '../components/layout'
 import SubscribeAction from '../components/subscibe'
-import Background from '../components/background'
+import dynamic from 'next/dynamic'
+
+const Background = dynamic(() => import('../components/background'), {
+  ssr: false
+});
 
 export default () => {
   const adjustHeightClassName = 'adjust-laptop'
