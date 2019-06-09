@@ -48,7 +48,7 @@ export default ({}) => {
               <Fragment>
                 <div style={{marginBottom: '15px'}}><Text>COMING SOON!</Text>
                 </div>
-                <Button type="default" ghost size={'large'}
+                <Button ghost size={'large'}
                         onClick={() => showEmailInput(true)}>SUBSCRIBE FOR
                   UPDATES</Button>
               </Fragment>
@@ -57,6 +57,10 @@ export default ({}) => {
       .root {
         display: grid;
         justify-items: center;
+      }
+      
+      .ant-btn:hover {
+        border-color: red
       }
     `}</style>
       </div>

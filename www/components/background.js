@@ -54,7 +54,7 @@ export default ({}) => {
             .container {
               height: 100%;
               display: grid;
-              grid-template-rows: repeat(4, 1fr);
+              grid-template-rows: repeat(3, 1fr);
               grid-template-columns: repeat(6, 1fr);
               overflow: hidden;
             }
