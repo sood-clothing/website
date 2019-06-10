@@ -8,7 +8,7 @@ const EmailSubmit = Input.Search;
 function subscribe(email, onSubscribeResponse) {
   const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
   if(!reg.test(email)) {
-    onSubscribeResponse('We accept email Ids only')
+    onSubscribeResponse('Please enter a valid email')
     return;
   }
 
@@ -16,10 +16,10 @@ function subscribe(email, onSubscribeResponse) {
     email
   },)
   .then(function (response) {
-    onSubscribeResponse('Successful')
+    onSubscribeResponse(`Thanks for subscribing! We'll reach out you once we launch`)
   })
   .catch(function (error) {
-    onSubscribeResponse('Please try again!')
+    onSubscribeResponse('Something went wrong! Please try again')
   });
 }
 
