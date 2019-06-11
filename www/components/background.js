@@ -1,11 +1,12 @@
 
 export default ({}) => {
   const base = "/static";
-  const imageSrcs = ['IMG_4.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_1.jpg',
-    'IMG_5.jpg', 'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_4.jpg',
-    'IMG_5.jpg', 'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_4.jpg',
-    'IMG_5.jpg', 'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_5.jpg',
-    'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_5.jpg', 'IMG_1.jpg'];
+
+  const imageSrcs = [
+      'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_4.jpg', 'IMG_5.jpg', 'IMG_6.jpg',
+      'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_4.jpg', 'IMG_5.jpg', 'IMG_6.jpg',
+      'IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg', 'IMG_4.jpg', 'IMG_5.jpg', 'IMG_6.jpg',
+      ];
 
   return (
       <div className="container root">
