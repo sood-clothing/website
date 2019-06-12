@@ -3,6 +3,7 @@
 import Document, {Head, Main, NextScript} from 'next/document';
 // We wrap our scripts below in Fragment to avoid unnecessary mark up
 import {Fragment} from 'react';
+import {GTAG_UA} from "../helpers";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -21,7 +22,7 @@ export default class MyDocument extends Document {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'UA-141936827-1');      
+        gtag('config', ${GTAG_UA});      
       `
     };
   }
@@ -38,7 +39,7 @@ export default class MyDocument extends Document {
             <Fragment>
               <script
                   async
-                  src="https://www.googletagmanager.com/gtag/js?id=UA-141936827-1"
+                  src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_UA}`}
               />
               {/* We call the function above to inject the contents of the script tag */}
               <script dangerouslySetInnerHTML={this.setGoogleTags()}/>
