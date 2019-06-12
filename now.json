@@ -26,6 +26,7 @@
   "env": {
     "MAILCHIMP_APIKEY": "@mailchimp-api-key",
     "MAILCHIMP_DC": "@mailchimp-dc",
-    "MAILCHIMP_LISTID": "@mailchimp-list-id"
+    "MAILCHIMP_LISTID": "@mailchimp-list-id",
+    "NODE_ENV": "production"
   }
 }
