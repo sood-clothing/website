@@ -2,6 +2,7 @@ import {useState, Fragment} from 'react'
 import Text from './text'
 import {Button, Input, Icon} from 'antd'
 import axios from 'axios'
+import "../assets/style.less";
 
 const EmailSubmit = Input.Search;
 
@@ -57,10 +58,6 @@ export default ({}) => {
       .root {
         display: grid;
         justify-items: center;
-      }
-      
-      .ant-btn:hover {
-        border-color: red
       }
     `}</style>
       </div>
