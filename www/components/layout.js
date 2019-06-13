@@ -1,10 +1,11 @@
 import Head from 'next/head'
 
-export default ({children, title = 'SOOD'}) => (
+export default ({children, title = 'SOOD', pageDescription = 'sood clothing subscribe'}) => (
     <div>
       <Head>
         <title>{title}</title>
         <meta charSet='utf-8'/>
+        <meta name='Description' content={pageDescription}/>
         <meta name='viewport' content='initial-scale=1.0, width=device-width'/>
         <link
             href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
