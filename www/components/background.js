@@ -13,7 +13,7 @@ export default ({}) => {
         <div className='overlay'/>
         {
           imageSrcs.map((name, i) => (
-              <img src={`${base}/${name}`} alt={name}/>
+              <img src={`${base}/${name}`} alt={name} height={'250px'} width={'250px'}/>
           ))
         }
 

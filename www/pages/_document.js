@@ -31,9 +31,11 @@ export default class MyDocument extends Document {
     const {isProduction} = this.props;
     return (
         <html>
+        <Head>
+          <NextScript/>
+        </Head>
         <body>
         <Main/>
-        <NextScript/>
         {/* We only want to add the scripts if in production */}
         {isProduction && (
             <Fragment>
