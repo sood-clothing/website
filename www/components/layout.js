@@ -7,9 +7,6 @@ export default ({children, title = 'SOOD', pageDescription = 'sood clothing subs
         <meta charSet='utf-8'/>
         <meta name='Description' content={pageDescription}/>
         <meta name='viewport' content='initial-scale=1.0, width=device-width'/>
-        <link
-            href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
-            rel="stylesheet"></link>
         <link rel="shortcut icon" type="image/png" href="/static/favicon.png"/>
       </Head>
       {children}
