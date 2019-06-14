@@ -54,8 +54,7 @@ export default ({}) => {
             .container {
               height: 100%;
               display: grid;
-              grid-template-rows: repeat(3, 1fr);
-              grid-template-columns: repeat(6, 1fr);
+              grid-template: repeat(3, 1fr) / repeat(6, 1fr);
               overflow: hidden;
             }
             
@@ -64,8 +63,7 @@ export default ({}) => {
                 .container {
                   height: 100%;
                   display: grid;
-                  grid-template-rows: repeat(2, 1fr);
-                  grid-template-columns: repeat(2, 1fr);
+                  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
                   overflow: hidden;
                 }
               }
@@ -73,7 +71,6 @@ export default ({}) => {
               @supports not (display: grid) {
                  // Safari/IE style
                  .container {
-                  background-color: red
                  }
               }
             }
