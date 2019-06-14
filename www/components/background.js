@@ -59,17 +59,16 @@ export default ({}) => {
             }
             
             @media only screen and (max-width: 600px) {
-              
-                 // Safari/IE style
-                 .container {
-                   display: flex;
-                   flex-flow: row wrap;
-                 }
-                 
-                 img {
-                  width: 50%;
-                  height: 50%;
-                 }
+               // compatible with Safari
+               .container {
+                 display: flex;
+                 flex-flow: row wrap;
+               }
+               
+               img {
+                width: 50%;
+                height: 50%;
+               }
             }
         `}</style>
       </div>
