@@ -59,26 +59,17 @@ export default ({}) => {
             }
             
             @media only screen and (max-width: 600px) {
-              @supports (display: grid) {
-                .container {
-                  height: 100%;
-                  display: grid;
-                  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-                  overflow: hidden;
-                }
-              }
               
-              @supports not (display: grid) {
                  // Safari/IE style
                  .container {
                    display: flex;
+                   flex-flow: row wrap;
                  }
                  
                  img {
                   width: 50%;
                   height: 50%;
                  }
-              }
             }
         `}</style>
       </div>
