@@ -71,6 +71,14 @@ export default ({}) => {
               @supports not (display: grid) {
                  // Safari/IE style
                  .container {
+                   display: flex;
+                   flex-direction: row;
+                   flex-flow: row wrap;
+                 }
+                 
+                 img {
+                  width: 50%;
+                  height: 50%;
                  }
               }
             }
