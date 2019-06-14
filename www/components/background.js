@@ -72,8 +72,6 @@ export default ({}) => {
                  // Safari/IE style
                  .container {
                    display: flex;
-                   flex-direction: row;
-                   flex-flow: row wrap;
                  }
                  
                  img {
