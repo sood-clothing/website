@@ -11,7 +11,7 @@ server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 server.post("*", (req, res) => {
   const email = req.body.email;
-  console.log('working sever : ' + email)
+  // console.log('working sever : ' + email)
 
   if(!process.env.MAILCHIMP_APIKEY || !email) {
     res.status(400).end("invalid request")
@@ -46,7 +46,7 @@ server.post("*", (req, res) => {
       res.status(400).send({data: null, err: 'Something wrong in request'})
     } else {
       if (response.statusCode === 200) {
-        console.log(response)
+        console.log('success')
         res.send({data: 'success', err: null})
       } else {
         console.log('error', response)

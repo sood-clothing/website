@@ -6,9 +6,55 @@ import "../assets/style.less";
 
 const EmailSubmit = Input.Search;
 
+function SuccessText() {
+  return (
+      <div>
+        <Text>
+          Thanks for subscribing!
+        </Text>
+        <br/>
+        <Text>
+          We'll reach out once we're ready to launch
+        </Text>
+
+        <style jsx>{`
+          div {
+            text-align: center;
+          }
+        `}</style>
+      </div>
+  )
+}
+
+function ErrorText() {
+  return (
+      <div>
+        <Text>
+          Something went wrong!
+        </Text>
+        <br/>
+        <Text>
+           Please try again
+        </Text>
+
+        <style jsx>{`
+          div {
+            
+          }
+        `}</style>
+      </div>
+  )
+}
+
+function SubmitResponseText(response) {
+  return (
+      response === 'error' ? <ErrorText/> : <SuccessText/>
+  )
+}
+
 function subscribe(email, onSubscribeResponse) {
   const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-  if(!reg.test(email)) {
+  if (!reg.test(email)) {
     onSubscribeResponse('Please enter a valid email')
     return;
   }
@@ -17,10 +63,10 @@ function subscribe(email, onSubscribeResponse) {
     email
   },)
   .then(function (response) {
-    onSubscribeResponse(`Thanks for subscribing! We'll reach out you once we launch`)
+    onSubscribeResponse(`success`)
   })
   .catch(function (error) {
-    onSubscribeResponse('Something went wrong! Please try again')
+    onSubscribeResponse('error')
   });
 }
 
@@ -34,7 +80,7 @@ export default ({}) => {
               <Fragment>
                 {
                   subscribeResponse ?
-                      <Text>{subscribeResponse}</Text>
+                      <SubmitResponseText response={subscribeResponse}/>
                       :
                       <EmailSubmit
                           placeholder="Email"
