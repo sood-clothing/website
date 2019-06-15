@@ -14,7 +14,7 @@ function SuccessText() {
         </Text>
         <br/>
         <Text>
-          We'll reach out once we're ready to launch
+          We'll reach out once we're ready to launch.
         </Text>
 
         <style jsx>{`
@@ -34,7 +34,7 @@ function ErrorText() {
         </Text>
         <br/>
         <Text>
-           Please try again
+           Please try again.
         </Text>
 
         <style jsx>{`
@@ -54,7 +54,7 @@ function InvalidText() {
         </Text>
         <br/>
         <Text>
-          Please try again
+          Please try again.
         </Text>
 
         <style jsx>{`
