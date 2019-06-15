@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": ["sood.co"],
+  "alias": "sood.co",
   "builds": [
     {
       "src": "www/next.config.js",
