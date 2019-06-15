@@ -39,23 +39,49 @@ function ErrorText() {
 
         <style jsx>{`
           div {
-            
+            text-align: center;
           }
         `}</style>
       </div>
   )
 }
 
-function SubmitResponseText(response) {
+function InvalidText() {
   return (
-      response === 'error' ? <ErrorText/> : <SuccessText/>
+      <div>
+        <Text>
+          Invalid Email!
+        </Text>
+        <br/>
+        <Text>
+          Please try again
+        </Text>
+
+        <style jsx>{`
+          div {
+            text-align: center;
+          }
+        `}</style>
+      </div>
   )
+}
+
+
+function renderSubmitResponseText(response) {
+  switch (response) {
+    case 'error':
+      return <ErrorText/>
+    case 'success':
+      return <SuccessText/>
+    case 'invalid':
+      return <InvalidText/>
+  }
 }
 
 function subscribe(email, onSubscribeResponse) {
   const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
   if (!reg.test(email)) {
-    onSubscribeResponse('Please enter a valid email')
+    onSubscribeResponse('invalid')
     return;
   }
 
@@ -80,7 +106,7 @@ export default ({}) => {
               <Fragment>
                 {
                   subscribeResponse ?
-                      <SubmitResponseText response={subscribeResponse}/>
+                       renderSubmitResponseText(subscribeResponse)
                       :
                       <EmailSubmit
                           placeholder="Email"
