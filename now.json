@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "alisas": ["sood.co"],
   "builds": [
     {
       "src": "www/next.config.js",
