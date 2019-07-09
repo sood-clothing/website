@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default ({children, title = 'SOOD', pageDescription = 'sood clothing subscribe'}) => (
+export default ({children, title = 'SOOD', pageDescription = 'sood clothing subscribe shopify'}) => (
     <div>
       <Head>
         <title>{title}</title>
